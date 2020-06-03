@@ -18,8 +18,18 @@ Estimate of time needed to complete: 1.5 hours
 
 Start time: 3:55 PM
 
-Finish time: 
+Finish time: 5:45
 
-Actual time needed to complete: 
+Actual time needed to complete: 2 hours 
+
+Feature 3: Style the Application
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 5:47
+
+Finish time: 5:45
+
+Actual time needed to complete: 2 hours 
 
 
