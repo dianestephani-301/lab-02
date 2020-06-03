@@ -13,15 +13,12 @@ function Photo(obj) {
   allPhotos.push(this);
 }
 
-Photo.prototype.render = function () {
-  console.log('in render function')
-  const myTemplate = $('#photo-template').html();
-  const $newSection = $(`<section class=${this.keyword}>${myTemplate}</section>`)
-  $newSection.find('img').attr('src', this.image_url);
-  $newSection.find('h2').text(this.title);
-  $newSection.find('p').text(this.description);
-  $('main').append($newSection);
+Photo.prototype.toHtml = function () {
+  let template = $('#photo-template').html();
+  let html = Mustache.render(template, this);
+  return html;
 }
+
 
 const getKeywords = () => {
   allPhotos.forEach(picture => {
@@ -54,11 +51,16 @@ $('select').on('change', function () {
 $.ajax('data/page-1.json', { method: 'GET', dataType: 'JSON' })
   .then(photos => {
     photos.forEach(value => {
-      new Photo(value).render();
+      new Photo(value);
 
     })
     getKeywords();
     dropDown();
+    allPhotos.forEach(picture => {
+      console.log(`This is the picture`, picture)
+      let photoHtml = picture.toHtml();
+      $('#photographs').append(photoHtml);
+    })
   })
 
 // Both ajax calls inside if/else statement, reference value of the button that was pushed to decide which ajax gets called.**
@@ -79,7 +81,14 @@ let runSecondHalf = () => {
   $.ajax('data/page-2.json', { method: 'GET', dataType: 'JSON' })
     .then(photos => {
       photos.forEach(value => {
-        new Photo(value).render();
+        new Photo(value);
+      })
+      getKeywords();
+      dropDown();
+      allPhotos.forEach(picture => {
+        console.log(`This is the picture`, picture)
+        let photoHtml = picture.toHtml();
+        $('#photographs').append(photoHtml);
       })
     })
 }
@@ -91,8 +100,10 @@ $('button').on('click', function () {
   // $('img').attr('');
   // $('h2').text('');
   // $('p').text('');
+  $('section').empty();
   runSecondHalf();
 })
+
 
 
 // add click event
@@ -107,4 +118,4 @@ $('button').on('click', function () {
 // Handle the event, render all the new data when that happens
 // BUtton = submit event. .on submit, etc.
 // COuld put entire ajax into an event handler
-// COuld create a new value and run a new loop
+// COuld create a new value and run a new loop.
