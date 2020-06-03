@@ -1,6 +1,8 @@
 # lab-02
 Code Fellows 301: Lab 02.
 
+This is a website where the user can look at all sorts of fun horned creatures They can look at specific ones by choosing an option from the dropdown list.
+
 Number and name of feature: 
 Feature 1: Display Images
 
@@ -28,8 +30,8 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 5:47
 
-Finish time: 5:45
+Finish time: 6:13
 
-Actual time needed to complete: 2 hours 
+Actual time needed to complete: 30 minutes 
 
 
