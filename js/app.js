@@ -60,3 +60,29 @@ $.ajax('data/page-1.json', { method: 'GET', dataType: 'JSON' })
     getKeywords();
     dropDown();
   })
+
+  $.ajax('data/page-1.json', { method: 'GET', dataType: 'JSON' })
+  .then(photos => {
+    photos.forEach(value => {
+      new Photo(value).render();
+    })
+  })
+
+$('button').on('submit', function(){
+  console.log(event);
+})
+
+  $.ajax('data/page-2.json', { method: 'GET', dataType: 'JSON' })
+
+
+
+  // Add navigation button xxx
+  // CLear page, render second set of data
+  // Render correct data to the right page
+  // Reset the filters (sean: filters don't change, stay basically the same)
+  // Repopulate them using only keywords from the images currently being displayed.
+
+  // Handle the event, render all the new data when that happens
+  // BUtton = submit event. .on submit, etc.
+  // COuld put entire ajax into an event handler
+  // COuld create a new value and run a new loop
