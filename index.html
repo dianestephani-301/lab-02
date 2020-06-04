@@ -12,13 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script id="photo-template" type="text/x-tmpl-mustache">
       
-      <!-- <section id="photo-template"> -->
-        <div id="photo-template">
+        <div class={{keyword}}>
         <h2>{{title}}</h2>
         <img src="{{image_url}}"/>
         <p>{{description}}</p> 
         {{{main}}}
-      <!-- </section> -->
         </div>
     </script>
   </head>
@@ -31,14 +29,15 @@
     </header>
     <main>
     <section id="photographs">
-      <div class="template">
+      <div class = "template" >
         <h2 class="name"></h2>
         <img class="image" />
         <p class="description"></p>
       </div>
     </section>
       <section id="navigation">
-        <button type=“submit” value=“submit”>Next Page</button>
+        <button id="page2" type=“submit” value=“submit”></button>
+        <button id="page1" type=“submit” value=“submit”></button>
       </section>
     </main>
     <footer>
