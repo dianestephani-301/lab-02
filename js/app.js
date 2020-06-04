@@ -120,3 +120,9 @@ $('#page1').on('click', function () {
   runFirstHalf();
 
 })
+
+allPhotos.sort((a, b) => {
+  return a.horns > b.horns ? 1 : -1;
+})
+
+console.log(allPhotos);
